@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAccountController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\WhatsAppSettingsController;
@@ -27,5 +28,12 @@ Route::middleware(['auth', 'can:access-admin'])->prefix('admin')->name('admin.')
         ->name('whatsapp-settings.edit');
     Route::put('/whatsapp-settings', [WhatsAppSettingsController::class, 'update'])
         ->name('whatsapp-settings.update');
+    Route::get('/account', [AdminAccountController::class, 'edit'])->name('account.edit');
+    Route::put('/account/username', [AdminAccountController::class, 'updateUsername'])
+        ->middleware('throttle:6,1')
+        ->name('account.username.update');
+    Route::put('/account/password', [AdminAccountController::class, 'updatePassword'])
+        ->middleware('throttle:6,1')
+        ->name('account.password.update');
     Route::post('/logout', [AdminAuthController::class, 'destroy'])->name('logout');
 });

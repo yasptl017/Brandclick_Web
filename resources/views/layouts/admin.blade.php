@@ -29,6 +29,11 @@
                         <svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.5 11.5a8.38 8.38 0 01-1.2 4.3L21 21l-5.3-1.7a8.5 8.5 0 114.8-7.8z" /><path stroke-linecap="round" d="M8.6 8.2c.2-.4.5-.4.7-.4h.4c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4 0 .6l-.5.6c.4.8 1 1.4 1.8 1.8l.6-.5c.2-.1.4-.1.6 0l1.6.7c.3.1.4.3.4.5v.4c0 .2 0 .5-.4.7-.5.2-1 .3-1.5.2-2.7-.7-4.8-2.8-5.5-5.5-.1-.5 0-1 .2-1.5z" /></svg>
                         <span data-sidebar-label class="whitespace-nowrap">WhatsApp settings</span>
                     </a>
+
+                    <a href="{{ route('admin.account.edit') }}" data-nav-link class="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition {{ request()->routeIs('admin.account.*') ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-950/30' : 'hover:bg-white/10 hover:text-white' }}">
+                        <svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3.25" /><path stroke-linecap="round" stroke-linejoin="round" d="M5.5 21a6.5 6.5 0 0113 0" /></svg>
+                        <span data-sidebar-label class="whitespace-nowrap">Account settings</span>
+                    </a>
                 </nav>
 
                 <div class="border-t border-white/10 p-3">
